@@ -2,8 +2,9 @@
     min-height: 20vh;
 
     padding-block: max(1.5vh,8px);
+    border-bottom: 1px solid rgba(230,230,230,.5);
 
-    background: -webkit-linear-gradient(20deg, #055, #0ee, #0dd, #0aa,#099);
+    background: -webkit-linear-gradient(20deg, #055, #0aa, #0dd, #0aa,#099);
     box-shadow: 0 0 120px #055 inset;
 }
 
@@ -12,4 +13,8 @@
     height: auto;
 
     margin: auto;
+}
+
+#imgTitulo {
+    display: block;
 }
