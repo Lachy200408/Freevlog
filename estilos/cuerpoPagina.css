@@ -1,0 +1,14 @@
+main {
+    min-height: 75vh;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main > :nth-child(odd) {
+    flex-grow: 1;
+}
+
+main > :nth-child(even){
+    flex-grow: 2;
+}

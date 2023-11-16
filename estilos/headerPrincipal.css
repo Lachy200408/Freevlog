@@ -1,0 +1,15 @@
+#encabezadoPagina {
+    min-height: 20vh;
+
+    padding-block: max(1.5vh,8px);
+
+    background: -webkit-linear-gradient(20deg, #055, #0ee, #0dd, #0aa,#099);
+    box-shadow: 0 0 120px #055 inset;
+}
+
+#encabezadoPagina > * {
+    max-width: max-content;
+    height: auto;
+
+    margin: auto;
+}
