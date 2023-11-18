@@ -1,3 +1,4 @@
 #piePagina {
-    min-height: 15vh;
+    min-height: 25vh;
+    background: -webkit-radial-gradient(left,var(--color-secundario),var(--color-terciario));
 }
