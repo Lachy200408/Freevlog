@@ -1,6 +1,4 @@
 #encabezadoPagina {
-    position: relative;
-
     font-family: 'Lato';
     font-size: 15px;
     font-weight: 400;
@@ -17,14 +15,10 @@
 #encabezadoPagina > * {
     max-width: max-content;
     height: auto;
+    margin-inline: auto;
 }
 
 #imgTitulo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-
     font-size: 5em;
     text-shadow: 0 0 5px white;
     color: white;
@@ -32,26 +26,6 @@
 }
 
 .fraseImg {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 20%;
-
-    font-size: 3em;
-    font-weight: 700;
-
-    color: white;
-    text-shadow: 0 0 10px var(--color-terciario);
-    opacity: .2;
-}
-
-.fraseImg:first-child {
-    left: 0;
-    text-align: left;
-}
-
-.fraseImg:last-child {
-    right: 0;
-    text-align: right;
+    color: #ececec;
+    text-shadow: 0 0 5px #2aa;
 }
