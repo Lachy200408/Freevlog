@@ -2,6 +2,8 @@
     --color-primario:#0aa;
     --color-secundario:#099;
     --color-terciario:#055;
+
+    scroll-behavior: smooth;
 }
 
 * {
