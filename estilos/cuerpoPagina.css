@@ -2,7 +2,7 @@ main {
     min-height: 75vh;
 
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
     margin: 10px 6px 0;
     border-radius: 13px 13px 0 0;
@@ -10,17 +10,36 @@ main {
 }
 
 #navArticulos, #infoArticulos {
-    flex-grow: 1;
+    flex: 1 0 200px;
+    margin-block: 5vh;
 }
 
 #displayArticulos {
-    flex-grow: 2;
+    flex: 2 0 400px;
+    margin-block: 5vh;
 }
 
 .separator {
     width: 1px;
+    box-shadow: 0 0 5px #777;
+
     margin-block: 3vh;
     margin-inline: 10px;
 
     background-color: #999;
+}
+
+@media only screen and (max-width: 870px) {
+    #displayArticulos {
+        order: 1;
+        min-height: 25vh;
+    }
+
+    #desaparecer {
+        display: none;
+    }
+
+    .separator {
+        margin-inline: 25px;
+    }
 }
