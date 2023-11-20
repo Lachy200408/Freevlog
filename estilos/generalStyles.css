@@ -2,6 +2,8 @@
     --color-primario:#0aa;
     --color-secundario:#099;
     --color-terciario:#055;
+
+    scroll-behavior: smooth;
 }
 
 * {
@@ -16,4 +18,8 @@ html, body {
 
 #encabezadoPagina, #barraNavegacion, #piePagina {
     display: block;
+}
+
+:where(p,h1,h2,h3,h4,h5,h6,span,div,a)::selection {
+    background-color: transparent;
 }
