@@ -69,10 +69,10 @@ main {
 @media only screen and (max-width: 870px) {
     #displayArticulos {
         order: 1;
-        min-height: 25vh;
+        min-height: 50vh;
     }
 
-    #desaparecer {
+    #desaparecer, #metadatosArticulo{
         display: none;
     }
 
