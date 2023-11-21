@@ -4,6 +4,7 @@
     --color-terciario:#055;
 
     scroll-behavior: smooth;
+    font-family: 'Lato';
 }
 
 * {
@@ -20,6 +21,10 @@ html, body {
     display: block;
 }
 
-:where(p,h1,h2,h3,h4,h5,h6,span,div,a)::selection {
+:where(p,h1,h2,h3,h4,h5,h6,span,div,a,tr,td)::selection {
     background-color: transparent;
+}
+
+:where(p,h1,h2,h3,h4,h5,h6,span,div,tr,td):hover {
+    cursor: default;
 }
