@@ -51,7 +51,6 @@ main {
 #infoArticulos table tr{
     display: block;
     margin-bottom: 3px;
-    text-shadow: 0 0 2px #022;
 }
 
 .separator {
