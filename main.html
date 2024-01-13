@@ -30,6 +30,10 @@
     </header>
 
     <nav id="barraNavegacion">
+        <div class="backgroundText">
+            <a name="tituloBarraNavegacion" href="#">Freeblog</a>
+        </div>
+        <i class="material-icons menuNavegacion" onclick=toggleMenu>menu</i>
         <ul class="listaNavegacion">
             <li class="itemNavegacion">
                 <a href="#">Inicio</a>
@@ -42,15 +46,14 @@
 
     <main class="cuerpoBlog">
         <nav id="navArticulos"></nav>
-        <div class="separator" id="desaparecer"></div>
+        <div class="separator desaparecer"></div>
         <section id="displayArticulos"></section>
-        <div class="separator"></div>
+        <div class="separator desaparecer"></div>
         <aside id="infoArticulos">
             <h1 id="tituloArticulo">Artículo</h1>
             <figure id="previsualizacionArticulo">
                 <img src="" alt="">
             </figure>
-            <p id="reseñaArticulo"></p>
             <table id="metadatosArticulo">
                 <tr>
                     <td>Autor:</td>
@@ -68,6 +71,11 @@
         </aside>
     </main>
 
-    <footer id="piePagina"></footer>
+    <footer id="piePagina">
+
+    </footer>
+
+    <!--* Scripts -->
+    <script type="module" src="./scripts/index.mjs"></script>
 </body>
 </html>

@@ -2,8 +2,11 @@
     --color-primario:#0aa;
     --color-secundario:#099;
     --color-terciario:#055;
+    --color-cuaternario:#a00;
+    --color-quinto:#c609;
 
     scroll-behavior: smooth;
+    overflow-x: hidden;
     font-family: 'Lato', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -21,10 +24,22 @@ html, body {
     display: block;
 }
 
-:where(p,h1,h2,h3,h4,h5,h6,span,div,a,tr,td)::selection {
+:where(p,h1,h2,h3,h4,h5,h6,span,div,a,i,tr,td)::selection {
     background-color: transparent;
 }
 
-:where(p,h1,h2,h3,h4,h5,h6,span,div,tr,td):hover {
+:where(p,h1,h2,h3,h4,h5,h6,span,div,i,tr,td):hover {
     cursor: default;
+}
+
+@media only screen and (max-width: 200px){
+    *{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 200px){
+    *{
+        display: none;
+    }
 }

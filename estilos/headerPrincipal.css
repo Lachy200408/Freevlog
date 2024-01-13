@@ -13,7 +13,6 @@
 
 #encabezadoPagina > * {
     max-width: max-content;
-    height: auto;
     margin-inline: auto;
 }
 
@@ -27,4 +26,20 @@
 .fraseImg {
     color: #ececec;
     text-shadow: 0 0 5px #2aa;
+}
+
+@media only screen and (max-width: 390px){
+    #encabezadoPagina{
+        display: grid;
+        place-content: center;
+    }
+    #imgTitulo{
+        font-size: 19vw;
+    }
+}
+
+@media only screen and (max-width: 345px){
+    .fraseImg{
+        font-size: 4.5vw;
+    }
 }

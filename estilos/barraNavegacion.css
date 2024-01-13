@@ -7,24 +7,57 @@
     height: max(25px,5vh);
 
     background: -webkit-linear-gradient(top,#dfdfdf,#f5f5f5);
+    box-shadow: 0 1px 2px #555;
 }
 
-.listaNavegacion {
+/** Efecto degradado del titulo */
+a[name="tituloBarraNavegacion"]{
+    color: transparent;
+}
+
+.backgroundText{
+    display: grid;
+    place-items: center;
+
+    font-size: 21.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    background: linear-gradient(to right, var(--color-secundario), var(--color-quinto));
+    background-clip: text;
+
+    max-width: max-content;
+    height: inherit;
+}
+
+.listaNavegacion{
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-end;
+    height: inherit;
 
     list-style: none;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background: transparent;
 }
 
 .itemNavegacion {
+    display: grid;
+    place-items: center;
     margin-inline: 7px;
-    font:23px;
-
-    background: -webkit-linear-gradient(top, #d9d9d9, #f5f5f5);
-    border-bottom: 2px solid #f5f5f5;
-
-    transition: all .2s linear 0s;
+    font-size: 21.5px;
+    background: transparent;
+    border-top: 2px solid #dfdfdf;
+    
+    transition: background .2s linear 0s, border-top .2s linear 0s;
+    -webkit-transition: background .2s linear 0s, border-top .2s linear 0s;
+    -moz-transition: background .2s linear 0s, border-top .2s linear 0s;
+    -ms-transition: background .2s linear 0s, border-top .2s linear 0s;
+    -o-transition: background .2s linear 0s, border-top .2s linear 0s;
 }
 
 .itemNavegacion a{
@@ -35,20 +68,117 @@
 
 .itemNavegacion:hover {
     background: -webkit-linear-gradient(top, #cfcfcf, #f5f5f5);
-    text-shadow: 0 0 3px var(--color-primario);
-    border-bottom: 2px solid var(--color-secundario);
+    text-shadow: 0 0 1px var(--color-primario);
+    border-top: 2px solid var(--color-secundario);
 
-    transition:
-        background .4s ease-out 0s,
-        text-shadow .3s ease-in 0s,
-        border-bottom .4s ease 0s;
+    transition:        background .4s ease-out 0s,        text-shadow .3s ease-in 0s,        border-top .4s ease 0s;
+    -webkit-transition:        background .4s ease-out 0s,        text-shadow .3s ease-in 0s,        border-top .4s ease 0s;
+    -moz-transition:        background .4s ease-out 0s,        text-shadow .3s ease-in 0s,        border-top .4s ease 0s;
+    -ms-transition:        background .4s ease-out 0s,        text-shadow .3s ease-in 0s,        border-top .4s ease 0s;
+    -o-transition:        background .4s ease-out 0s,        text-shadow .3s ease-in 0s,        border-top .4s ease 0s;
 }
 
 .itemNavegacion:active {
     background: -webkit-linear-gradient(top, #cacaca, #f5f5f5);
     text-shadow: none;
+    transition:        background .2s ease-out 0s,        text-shadow .2s ease-in 0s;
+    -webkit-transition:        background .2s ease-out 0s,        text-shadow .2s ease-in 0s;
+    -moz-transition:        background .2s ease-out 0s,        text-shadow .2s ease-in 0s;
+    -ms-transition:        background .2s ease-out 0s,        text-shadow .2s ease-in 0s;
+    -o-transition:        background .2s ease-out 0s,        text-shadow .2s ease-in 0s;
+}
 
-    transition:
-        background .2s ease-out 0s,
-        text-shadow .2s ease-in 0s;
+.menuNavegacion{
+    display: none;
+}
+
+@media only screen and (max-width: 300px){
+    /** Estilos del icono de menu */
+
+    .menuNavegacion{
+        display: inline;
+        position: absolute;
+        top: 45%;
+        right: 0;
+
+        color: var(--color-terciario);
+        font-style: normal;
+
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+
+        &:hover{
+            text-shadow: 0 0 2px var(--color-primario);
+        }
+    }
+
+    .menuNavegacionDesplegado{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 25px);
+        
+        max-height: 95vh;
+        height: 95vh;
+        width: 55vw;
+
+        position: absolute;
+        top: calc(max(25px, 5vh) + 2px);
+        right: 0;
+
+        list-style: none;
+
+        background: #0123;
+
+        transition: right .5s ease-in-out 0s;
+        -webkit-transition: right .5s ease-in-out 0s;
+        -moz-transition: right .5s ease-in-out 0s;
+        -ms-transition: right .5s ease-in-out 0s;
+        -o-transition: right .5s ease-in-out 0s;
+    }
+
+    /** Lista navegacion */
+
+    .listaNavegacion{
+        position: absolute;
+        top: 0;
+        right: -60%;
+    }
+
+    /** Items navegacion */
+
+    .itemNavegacion{
+        display: flex;
+
+        margin: 0;
+        border-top: none;
+        border-bottom: 1px solid #fff6;
+
+        font-size: smaller;
+        text-align: end;
+        background: transparent;
+
+        & a{
+            display: block;
+            align-self: center;
+
+            width: 100%;
+            color: white;
+            text-shadow: 0 0 1px lightgray, 0 0 2px white;
+        }
+
+        &:hover{
+            background: linear-gradient(to bottom, #0125, transparent);
+            border-top: none;
+            border-bottom: 1px solid #fff;
+
+            transition: all .4s ease-out 0s;
+            -webkit-transition: all .4s ease-out 0s;
+            -moz-transition: all .4s ease-out 0s;
+            -ms-transition: all .4s ease-out 0s;
+            -o-transition: all .4s ease-out 0s;
+        }
+    }
 }

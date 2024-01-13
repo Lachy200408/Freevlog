@@ -1,64 +1,59 @@
 main {
     min-height: 75vh;
 
-    display: flex;
-    flex-wrap: wrap-reverse;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1vw 50vw 1vw 1fr;
+
 
     margin: 10px 6px 0;
-    border-radius: 13px 13px 0 0;
-    box-shadow: 0 0 5px gray;
-}
+    padding-block: 5vh;
 
-#navArticulos, #infoArticulos {
-    flex: 1 0 200px;
-    margin-block: 5vh;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 5px gray;
     color: #012;
 }
 
-#displayArticulos {
-    flex: 2 0 400px;
-    margin-block: 5vh;
+/** Aside de informacion del articulo */
+
+#infoArticulos>*{
+    margin-inline: auto;
 }
 
 #infoArticulos #tituloArticulo{
     width: max-content;
-    margin: 0 auto 15px;
 }
 
 #infoArticulos figure{
     width: 80%;
     height: 240px;
-    margin: 0 auto 15px;
-    border-radius: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
     box-shadow: 0 3px 5px #444;
     background-image: linear-gradient(20deg, #ccc, #ddd, #ccc);
     background-image: -webkit-linear-gradient(20deg, #ccc, #ddd, #ccc);
-}
-
-#infoArticulos #reseñaArticulo{
-    width: 80%;
-    height: auto;
-    margin: 0 auto 15px;
-    border-radius: 3px;
-    box-shadow: 0 0 5px gray;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 #infoArticulos table{
     width: 85%;
-    margin: 0 auto;
 }
 
 #infoArticulos table tr{
     display: block;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
+
+/** --- */
 
 .separator {
     width: 1px;
     box-shadow: 0 0 5px #777;
 
-    margin-block: 3vh;
-    margin-inline: 10px;
+    margin-inline: auto;
 
     background-color: #999;
 }
@@ -66,16 +61,39 @@ main {
 /* Diseño responsive */
 
 @media only screen and (max-width: 870px) {
-    #displayArticulos {
-        order: 1;
-        min-height: 50vh;
+    main{
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
-    #desaparecer, #metadatosArticulo{
+    #displayArticulos{
+        order: 1;        
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        border-right: 1px solid #999;
+    }
+
+    .desaparecer,#metadatosArticulo {
         display: none;
     }
+}
 
-    .separator {
-        margin-inline: 25px;
+@media only screen and (max-width: 630px){
+    main{
+        grid-template-rows: .7fr .3fr;
+        grid-template-columns: 1fr;
+    }
+
+    #displayArticulos{
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        border-right: none;
+        border-bottom: 1px solid #999;
+    }
+
+    #infoArticulos{
+        display: none;
     }
 }
