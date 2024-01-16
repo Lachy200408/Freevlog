@@ -1,21 +1,20 @@
 import {toggleMenu} from "./toggleMenu.mjs";
+import {displayListaArticulos} from "./displayListaArticulos.mjs";
+import {getListaArticulos} from "./request.mjs";
 
-document.getElementsByClassName("menuNavegacion")[0].onclick = toggleMenu;
+document.getElementById("menuNavegacion").onclick = toggleMenu;
 
 window.onload = () => {
-	const message = { text : "Hola server" };
+	//* Tomo la lista de articulos del blog
+	let listArt = [];
+	getListaArticulos()
+		.then(response => {
+			listArt = response;
 
-	fetch(window.location.href + 'messages~~listArt', {method : 'POST'})
-	.then(res => {
-		//* Compruebo que funciona
-		if(!res.ok) throw new Error('Network response was not ok');
-
-		return res.text();
-	})
-	.then(data => {
-		alert(data);
-	})
-	.catch(error => {
-		console.log(error);
-	});
+			//* La inserto en la pagina
+			displayListaArticulos(listArt);
+		})
+		.catch(error => {
+			console.log(error);
+		});
 };

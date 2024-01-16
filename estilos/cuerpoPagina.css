@@ -5,7 +5,6 @@ main {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1vw 50vw 1vw 1fr;
 
-
     margin: 10px 6px 0;
     padding-block: 5vh;
 
@@ -14,9 +13,23 @@ main {
     color: #012;
 }
 
+/** Menu navegacion de articulos */
+
+#navArticulosDetails{
+    width: 80%;
+    line-height: 1.5em;
+}
+
+#navArticulosDetails>*:not(#rootArticulos){
+    text-indent: 1.5em;
+
+    list-style-position: inside;
+    list-style-type: "- ";
+}
+
 /** Aside de informacion del articulo */
 
-#infoArticulos>*{
+#infoArticulos>* , #navArticulos>*{
     margin-inline: auto;
 }
 

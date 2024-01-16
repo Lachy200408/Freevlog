@@ -1,6 +1,6 @@
 const util = {
-	arrayToJson : (array) => {
-		return (array.length === 1)? array[0] : array[0] + util.arrayToJson(util._shift(array));
+	arrayToText : (array) => {
+		return (array.length === 1)? array[0] : array[0] + ',' + util.arrayToText(util._shift(array));
 	},
 
 	_shift : (array) => {

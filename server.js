@@ -32,9 +32,9 @@ const server = http.createServer((request, response) => {
 		//* Ejecuto y envio el mensaje
 		let respuesta = funciones[message]("./articulos/");
 		respuesta.then(texto => {
-			texto = util.arrayToJson(texto);
+			texto = util.arrayToText(texto);
 
-			response.writeHead(200, {'Content-Type' : 'text'});
+			response.writeHead(200, {'Content-Type' : 'text/html'});
 			response.end(texto, 'utf-8');
 		})
 
